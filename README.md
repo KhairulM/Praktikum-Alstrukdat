@@ -1,2 +1,2 @@
-#Praktikum Alstrukdat IF-2017
-    Kumpulan ADT-ADT yang telah dibuat
+#Praktikum-Alstrukdat
+Kumpulan ADT-ADT yang telah dibuat untuk praktikum Alstrukdat IF 2017
