@@ -21,16 +21,13 @@ int main(){
     }
 
     //Algoritma
-    scanf("%d", &a);
-    scanf("%d", &b);
-    scanf("%d", &c);
+    scanf("%d %d %d", &a, &b, &c);
 
     PROCTUKAR (&a, &c);
     PROCTUKAR (&b, &c);
 
-    printf("%d \n", a);
-    printf("%d \n", b);
-    printf("%d", c);
+    printf("%d %d %d\n", a, b, c);
+   
 
 return 0;
 }

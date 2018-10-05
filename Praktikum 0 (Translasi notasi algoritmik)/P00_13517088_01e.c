@@ -66,11 +66,11 @@ int main(){
     //Program utama
     scanf("%c", &CC);
     if (KarakterToInteger (CC) != 10) { //CC adalah sebuah angka
-        printf("%d", KarakterToInteger (CC));
+        printf("%d\n", KarakterToInteger (CC));
     } else if (IsAnA (CC) == true){     //CC bukan angka
-        printf("Bukan angka, tapi merupakan karakter A");
+        printf("Bukan angka, tapi merupakan karakter A\n");
     } else {                            //CC bukan karakter A
-        printf("Bukan angka dan bukan karakter A");
+        printf("Bukan angka dan bukan karakter A\n");
     }
 
 return 0;

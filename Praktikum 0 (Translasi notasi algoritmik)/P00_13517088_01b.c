@@ -11,14 +11,14 @@ int main(){
     float V, I, R;
 
     //Algoritma
-    printf("Input nilai arus : \n");
+    printf("Input nilai arus : ");
     scanf("%f", &I);
-    printf("Input nilai hambatan : \n");
+    printf("Input nilai hambatan : ");
     scanf("%f", &R);
 
     V=I*R;
 
-    printf("Tegangan listrik = %f volt", V);
+    printf("Tegangan listrik = %f volt\n", V);
 
 
     return 0;

@@ -15,11 +15,11 @@ int main(){
     scanf("%d", &T); //Inisiasi
 
     if (T<=0){
-        printf("Beku");
+        printf("Beku\n");
     }else if (T>0 && T<=100){
-        printf("Cair");
+        printf("Cair\n");
     }else{
-        printf("Uap");
+        printf("Uap\n");
     }
 
     return 0;

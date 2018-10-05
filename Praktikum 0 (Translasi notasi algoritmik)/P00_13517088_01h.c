@@ -23,7 +23,7 @@ int main(){
         i=i+1;
     }
 
-    printf("%f", S);
+    printf("%f\n", S);
 
 return 0;
 }
