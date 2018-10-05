@@ -425,5 +425,89 @@ void Transpose (MATRIKS * M){
 
 /* I.S. M terdefinisi dan IsBujursangkar(M) */
 /* F.S. M "di-transpose", yaitu setiap elemen M(i,j) ditukar nilainya dengan elemen M(j,i) */
+float RataBrs(MATRIKS M, indeks i){
+	float Sum=0;
+	int NbElmt=0;
+	indeks Kol;
+	
+	for (Kol=GetFirstIdxKol(M);Kol<=GetLastIdxKol(M);Kol++){
+			Sum+=Elmt(M,i,Kol);
+			NbElmt++;
+	}
+	Sum=Sum/NbElmt;
+	return (Sum);
+}
 
+float RataKol(MATRIKS M, indeks j){
+	float Sum=0;
+	int NbElmt=0;
+	indeks Brs;
+	
+	for (Brs=GetFirstIdxBrs(M);Brs<=GetLastIdxBrs(M);Brs++){
+			Sum+=Elmt(M,Brs,j);
+			NbElmt++;
+	}
+	Sum=Sum/NbElmt;
+	return (Sum);
+}
+
+void MaxMinBrs (MATRIKS M, indeks i, ElType *max, ElType *min){
+	indeks Kol;
+
+	(*max)=Elmt(M,i,KolMin);
+	(*min)=Elmt(M,i,KolMin);
+	
+	if (NKolEff(M)>1){
+		for (Kol=KolMin+1;Kol<=GetLastIdxKol(M);Kol++){
+			if (Elmt(M,i,Kol)>(*max)){
+				(*max)=Elmt(M,i,Kol);
+			}if (Elmt(M,i,Kol)<(*min)){
+				(*min)=Elmt(M,i,Kol);
+			}
+		}
+	}	
+}
+
+void MaxMinKol (MATRIKS M, indeks j, ElType *max, ElType *min){
+	indeks Brs;
+
+	(*max)=Elmt(M,BrsMin,j);
+	(*min)=Elmt(M,BrsMin,j);
+	
+	if (NBrsEff(M)>1){
+		for (Brs=BrsMin+1;Brs<=GetLastIdxBrs(M);Brs++){
+			if (Elmt(M,Brs,j)>(*max)){
+				(*max)=Elmt(M,Brs,j);
+			}if (Elmt(M,Brs,j)<(*min)){
+				(*min)=Elmt(M,Brs,j);
+			}
+		}
+	}	
+}
+
+int CountXBrs (MATRIKS M, indeks i, ElType X){
+	int Count=0;
+	indeks j;
+	
+	for(j=GetFirstIdxKol(M);j<=GetLastIdxKol(M);j++){
+		if(Elmt(M,i,j)==X){
+			Count++;
+		}
+	}
+	
+	return Count;
+}
+
+int CountXKol (MATRIKS M, indeks j, ElType X){
+	int Count=0;
+	indeks i;
+	
+	for(i=GetFirstIdxBrs(M);i<=GetLastIdxBrs(M);i++){
+		if(Elmt(M,i,j)==X){
+			Count++;
+		}
+	}
+	
+	return Count;
+}
 
