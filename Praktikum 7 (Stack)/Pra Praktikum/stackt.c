@@ -9,20 +9,20 @@ void CreateEmpty (Stack *S){
 /* jadi indeksnya antara 1.. MaxEl+1 karena 0 tidak dipakai */
 /* Ciri stack kosong : TOP bernilai Nil */
 
-    TOP(*S)=Nil;
+    Top(*S)=Nil;
 }
 
 /* ************ Predikat Untuk test keadaan KOLEKSI ************ */
 boolean IsEmpty (Stack S){
 /* Mengirim true jika Stack kosong: lihat definisi di atas */
 
-    return (TOP(S)==Nil);
+    return (Top(S)==Nil);
 }
 
 boolean IsFull (Stack S){
 /* Mengirim true jika tabel penampung nilai elemen stack penuh */
 
-    return (TOP==MaxEL+1);
+    return (Top(S)==MaxEl+1);
 }
 
 
@@ -32,7 +32,7 @@ void Push (Stack * S, infotype X){
 /* I.S. S mungkin kosong, tabel penampung elemen stack TIDAK penuh */
 /* F.S. X menjadi TOP yang baru,TOP bertambah 1 */
 
-    TOP(*S)++;
+    Top(*S)++;
     InfoTop(*S)=X;
 }
 
@@ -43,6 +43,6 @@ void Pop (Stack * S, infotype* X){
 /* F.S. X adalah nilai elemen TOP yang lama, TOP berkurang 1 */
 
     (*X)=InfoTop(*S);
-    TOP(*S)--;
+    Top(*S)--;
 
 }
