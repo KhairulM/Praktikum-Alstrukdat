@@ -22,7 +22,7 @@ boolean IsEmpty (Stack S){
 boolean IsFull (Stack S){
 /* Mengirim true jika tabel penampung nilai elemen stack penuh */
 
-    return (Top(S)==MaxEl+1);
+    return (Top(S)==MaxEl);
 }
 
 
@@ -32,7 +32,12 @@ void Push (Stack * S, infotype X){
 /* I.S. S mungkin kosong, tabel penampung elemen stack TIDAK penuh */
 /* F.S. X menjadi TOP yang baru,TOP bertambah 1 */
 
-    Top(*S)++;
+    if (IsEmpty(*S)){
+        Top(*S)=1;
+    }else{
+        Top(*S)++;
+    }
+    
     InfoTop(*S)=X;
 }
 
@@ -44,5 +49,8 @@ void Pop (Stack * S, infotype* X){
 
     (*X)=InfoTop(*S);
     Top(*S)--;
+    if (IsEmpty(*S)){
+        Top(*S)=Nil;
+    }
 
 }
