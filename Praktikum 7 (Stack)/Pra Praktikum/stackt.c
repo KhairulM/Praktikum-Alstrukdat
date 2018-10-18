@@ -48,9 +48,10 @@ void Pop (Stack * S, infotype* X){
 /* F.S. X adalah nilai elemen TOP yang lama, TOP berkurang 1 */
 
     (*X)=InfoTop(*S);
-    Top(*S)--;
-    if (IsEmpty(*S)){
+    if (Top(*S)==1){
         Top(*S)=Nil;
+    }else{
+        Top(*S)--;
     }
 
 }
