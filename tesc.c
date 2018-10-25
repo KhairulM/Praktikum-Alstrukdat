@@ -15,7 +15,7 @@ P2=First(L2);
 printf("%s, %s", First(L1), First(L2));
 
 P1=Alokasi(10);
-First(L1)=P1;
+InsertFirst(&L1, P1);
 P2=Alokasi(15);
 First(L2)=P2;
 Next(P1)=Alokasi(12);
